@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BingX PH KOL Exclusive Trading Competition</title>
+<link rel="icon" href="img/bingx-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: #0A0B0D; }
+
+  .bx {
+    --bx-bg: #0A0B0D; --bx-panel: #131519; --bx-panel-2: #1A1D23; --bx-line: #262A32;
+    --bx-fg: #FFFFFF; --bx-muted: #9AA0AB; --bx-blue: #0F5FFE; --bx-blue-soft: rgba(15,95,254,.16);
+    --bx-green: #2DE82A; --bx-grey-line: #4A505B;
+    background: var(--bx-bg); color: var(--bx-fg);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: clamp(16px, 4vw, 40px); display: grid; gap: clamp(20px, 3vw, 32px);
+    font-variant-numeric: tabular-nums; min-height: 100%;
+  }
+  .bx * { box-sizing: border-box; }
+  .bx h1, .bx h2, .bx h3, .bx p { margin: 0; }
+
+  .bx-hero { position: relative; overflow: hidden; border-radius: 16px; padding: clamp(20px, 4vw, 40px);
+    background: radial-gradient(120% 140% at 100% 0%, rgba(15,95,254,.55) 0%, rgba(15,95,254,.12) 38%, transparent 62%), var(--bx-panel);
+    border: 1px solid var(--bx-line); display: grid; gap: 14px; }
+  .bx-hero img.bx-logo { height: 28px; width: auto; display: block; }
+  .bx-eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--bx-muted); font-weight: 600; }
+  .bx-hero h1 { font-size: clamp(30px, 6vw, 52px); line-height: 1.05; font-weight: 700; letter-spacing: -.02em; }
+  .bx-hero h1 span { color: var(--bx-blue); }
+  .bx-hero .bx-sub { color: var(--bx-muted); font-size: 15px; max-width: 46rem; line-height: 1.5; }
+  .bx-live { display: inline-flex; align-items: center; gap: 8px; width: fit-content; background: rgba(255,255,255,.06);
+    border: 1px solid var(--bx-line); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 500; }
+  .bx-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bx-blue); box-shadow: 0 0 0 4px rgba(15,95,254,.25); }
+
+  .bx-stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); }
+  .bx-stat { background: var(--bx-panel); border: 1px solid var(--bx-line); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+  .bx-stat p:first-child { font-size: 12px; color: var(--bx-muted); font-weight: 500; }
+  .bx-stat .bx-num { font-size: clamp(22px, 3.2vw, 30px); font-weight: 700; margin-top: 6px; letter-spacing: -.01em; overflow-wrap: anywhere; }
+
+  .bx-section { display: grid; gap: 14px; }
+  .bx-section > h2 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+  .bx-section > p.bx-note { color: var(--bx-muted); font-size: 13px; line-height: 1.5; margin-top: -6px; }
+
+  .bx-prizes { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+  .bx-prize { position: relative; border-radius: 14px; border: 1px solid var(--bx-line); overflow: hidden;
+    background: radial-gradient(90% 70% at 50% 42%, #2A2F38 0%, #16181D 60%, #111317 100%); display: grid; grid-template-rows: auto 1fr; }
+  .bx-prize.first { border-color: rgba(15,95,254,.7);
+    background: radial-gradient(90% 70% at 50% 42%, rgba(15,95,254,.42) 0%, #16181D 62%, #111317 100%); }
+  .bx-prize .bx-img { height: 220px; display: flex; align-items: flex-end; justify-content: center; gap: 4px; padding: 18px 12px 0; }
+  .bx-prize .bx-img img { max-height: 100%; width: auto; max-width: 62%; object-fit: contain; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
+  .bx-prize .bx-img img.small { max-height: 74%; max-width: 30%; }
+  .bx-prize .bx-cap { padding: 14px 16px 16px; border-top: 1px solid var(--bx-line); background: rgba(10,11,13,.55); }
+  .bx-rank { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,.08); color: var(--bx-fg); }
+  .bx-prize.first .bx-rank { background: var(--bx-blue); }
+  .bx-cap h3 { font-size: 17px; font-weight: 600; margin-top: 8px; }
+  .bx-cap p { font-size: 13px; color: var(--bx-muted); margin-top: 2px; }
+
+  .bx-card { background: var(--bx-panel); border: 1px solid var(--bx-line); border-radius: 14px; padding: clamp(14px, 2.4vw, 22px); min-width: 0; }
+  .bx-table-wrap { overflow-x: auto; }
+  .bx-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .bx-table th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--bx-muted);
+    padding: 0 10px 10px; border-bottom: 1px solid var(--bx-line); white-space: nowrap; }
+  .bx-table td { padding: 14px 10px; border-bottom: 1px solid var(--bx-line); white-space: nowrap; }
+  .bx-table tr:last-child td { border-bottom: 0; }
+  .bx-table .num { text-align: right; }
+  .bx-table tr.top1 td { background: var(--bx-blue-soft); }
+  .bx-badge { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; font-weight: 700; font-size: 13px;
+    background: rgba(255,255,255,.06); color: var(--bx-muted); }
+  .bx-badge.r1 { background: var(--bx-blue); color: #fff; }
+  .bx-badge.r2, .bx-badge.r3 { background: rgba(255,255,255,.14); color: #fff; }
+  .bx-kol { font-weight: 600; }
+  .bx-tv { font-weight: 700; }
+  .bx-bar { position: relative; height: 6px; border-radius: 3px; background: #262A32; min-width: 7rem; }
+  .bx-bar span { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--bx-blue); }
+  .bx-bar.done span { background: var(--bx-green); }
+  .bx-pct { font-size: 12px; color: var(--bx-muted); margin-top: 6px; }
+  .bx-chip { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
+  .bx-chip.ok { color: var(--bx-green); background: rgba(45,232,42,.1); }
+  .bx-chip.no { color: var(--bx-muted); background: rgba(255,255,255,.06); }
+  .bx-prize-cell { color: var(--bx-muted); font-size: 13px; }
+  .bx-prize-cell.win { color: var(--bx-fg); font-weight: 500; }
+  @media (max-width: 640px) { .bx-hide-sm { display: none; } }
+
+  .bx-chart { position: relative; min-height: 300px; }
+  .bx-tip { position: absolute; pointer-events: none; background: #1A1D23; border: 1px solid #333842; border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5); padding: 8px 10px; font-size: 12px; white-space: nowrap; color: #fff; }
+  .bx-tip .d { color: var(--bx-muted); margin-bottom: 4px; }
+  .bx-tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+
+  .bx-rules { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+  .bx-rule { background: var(--bx-panel); border: 1px solid var(--bx-line); border-radius: 12px; padding: 16px 18px; }
+  .bx-rule h3 { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .bx-rule h3::before { content: ""; width: 6px; height: 6px; border-radius: 2px; background: var(--bx-blue); flex: none; }
+  .bx-rule p { font-size: 13px; color: var(--bx-muted); line-height: 1.55; margin-top: 6px; }
+  .bx-rule b { color: var(--bx-fg); font-weight: 600; }
+  .bx-list { margin: 0; padding-left: 20px; display: grid; gap: 10px; color: var(--bx-muted); font-size: 14px; line-height: 1.6; max-width: 52rem; }
+  .bx-list li::marker { color: var(--bx-blue); }
+  .bx-list b { color: var(--bx-fg); font-weight: 600; }
+  .bx-foot { color: var(--bx-muted); font-size: 12px; text-align: center; padding-top: 4px; }
+
+  .bx { max-width: 1100px; margin: 0 auto; }
+  .bx-updated { color: var(--bx-muted); font-size: 13px; margin-top: -6px; }
+  .bx-msg { color: var(--bx-muted); text-align: center; padding: 18px 0; }
+</style>
+</head>
+<body>
+<div class="bx">
+  <header class="bx-hero">
+    <img class="bx-logo" alt="BingX" src="img/bingx-logo.png">
+    <h1>KOL Exclusive Trading <span>Competition</span></h1>
+    <p class="bx-sub">A 1-week futures trading volume competition for BingX PH KOL partners. Start with a maximum of 200 USDT, hit at least 1M USDT trading volume to qualify, and the top 3 by volume win BingX prizes.</p>
+    <p class="bx-live"><span class="bx-dot"></span><span id="countdown">&nbsp;</span></p>
+  </header>
+
+  <section class="bx-section" id="prizes">
+    <h2>Prizes</h2>
+    <div class="bx-prizes">
+      <article class="bx-prize first">
+        <div class="bx-img"><img alt="Beats headset with BingX branding" src="img/headset.webp"></div>
+        <div class="bx-cap"><span class="bx-rank">Top 1</span><h3>Beats headset</h3></div>
+      </article>
+      <article class="bx-prize">
+        <div class="bx-img"><img alt="BingX backpack" src="img/bag.webp"><img class="small" alt="BingX tumbler" src="img/tumbler.webp"></div>
+        <div class="bx-cap"><span class="bx-rank">Top 2</span><h3>BingX bag + tumbler</h3></div>
+      </article>
+      <article class="bx-prize">
+        <div class="bx-img"><img alt="BingX black shirt" src="img/shirt.webp"><img class="small" alt="BingX tumbler" src="img/tumbler.webp"></div>
+        <div class="bx-cap"><span class="bx-rank">Top 3</span><h3>BingX shirt + tumbler</h3></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bx-section" id="standings">
+    <h2>Leaderboard</h2>
+    <p class="bx-updated" id="updated"></p>
+    <div class="bx-card bx-table-wrap">
+      <table class="bx-table">
+        <thead><tr>
+          <th>Rank</th>
+          <th>KOL</th>
+          <th class="num">TV (USDT)</th>
+        </tr></thead>
+        <tbody id="board"><tr><td colspan="3" class="bx-msg">Loading leaderboard…</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="bx-section" id="rules">
+    <h2>How it works</h2>
+    <ul class="bx-list">
+      <li><b>Duration:</b> Oct 30, 12:00 AM to Nov 6, 10:00 PM (PH time). Winners announced Nov 7.</li>
+      <li><b>TV formula:</b> Position size × Leverage × 2 (open + close). Example: 100 USDT at 20x opened and closed = 4,000 TV.</li>
+      <li><b>Starting capital:</b> Max 200 USDT in your futures account at the start. No top-ups or transfers in during the week. You can keep trading with your profits.</li>
+      <li><b>Qualify:</b> Reach at least 1,000,000 USDT TV within the week. Highest TV among qualifiers wins.</li>
+      <li><b>What counts:</b> Crypto perpetual futures on your own BingX account. Not counted: spot, CFDs (stocks, forex, commodities), bots, and referral or community volume.</li>
+      <li><b>Tie-breaker:</b> Higher net realized PnL in the window, then earliest registration.</li>
+      <li><b>Fair play:</b> 1 UID per KOL. No sub or alt accounts, no wash trading. BingX PH may disqualify any account, and its decision is final.</li>
+    </ul>
+  </section>
+
+  <p class="bx-foot">BingX Philippines · Empowering Traders</p>
+</div>
+
+<script>
+  const START = new Date('2026-10-30T00:00:00+08:00');
+  const END = new Date('2026-11-06T22:00:00+08:00');
+  const fmt = new Intl.NumberFormat('en-US', {maximumFractionDigits: 0});
+
+  function tick() {
+    const el = document.getElementById('countdown'), now = new Date();
+    const left = (ms) => { const h = Math.floor(ms / 3600000), d = Math.floor(h / 24);
+      return d > 0 ? d + 'd ' + (h % 24) + 'h' : h + 'h ' + Math.floor((ms % 3600000) / 60000) + 'm'; };
+    el.textContent = now < START ? 'Starts in ' + left(START - now)
+      : now < END ? 'Live now · ends in ' + left(END - now) : 'Competition ended';
+  }
+  tick(); setInterval(tick, 30000);
+
+  function cell(tr, text, cls) { const td = document.createElement('td'); if (cls) td.className = cls; if (text !== null) td.textContent = text; tr.appendChild(td); return td; }
+
+  fetch('data.json?v=' + Date.now(), {cache: 'no-store'})
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((data) => {
+      const rows = (data.participants || []).map((p) => ({uid: String(p.uid), tv: Number(p.tv) || 0}))
+        .sort((a, b) => b.tv - a.tv);
+      const tbody = document.getElementById('board');
+      tbody.replaceChildren();
+      rows.forEach((r, i) => {
+        const tr = document.createElement('tr');
+        if (i === 0 && r.tv > 0) tr.className = 'top1';
+        const b = document.createElement('span');
+        b.className = 'bx-badge' + (r.tv > 0 && i < 3 ? ' r' + (i + 1) : '');
+        b.textContent = String(i + 1);
+        cell(tr, null).appendChild(b);
+        cell(tr, r.uid, 'bx-kol');
+        cell(tr, fmt.format(r.tv), 'num bx-tv');
+        tbody.appendChild(tr);
+      });
+      if (data.updated) document.getElementById('updated').textContent = 'Last updated: ' + data.updated + ' (PH time)';
+    })
+    .catch(() => {
+      document.getElementById('board').innerHTML = '<tr><td colspan="3" class="bx-msg">Leaderboard is updating. Please check back in a few minutes.</td></tr>';
+    });
+</script>
+</body>
+</html>

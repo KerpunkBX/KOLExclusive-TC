@@ -1,2 +1,7 @@
-# KOLExclusive-TC
-A 1-week futures trading volume competition for BingX PH KOL partners. Start with a maximum of 200 USDT, hit at least 1M USDT trading volume to qualify, and the top 3 by volume win BingX prizes.
+# BingX PH KOL Exclusive Trading Competition
+
+Leaderboard site for the BingX PH KOL Exclusive Trading Competition (Oct 30 to Nov 6, 2026).
+
+- `index.html`: the page
+- `data.json`: leaderboard numbers (masked UIDs and cumulative TV), updated daily at 10 PM PH time
+- `img/`: prize images and logo
