@@ -53,6 +53,9 @@
   .bx-prize .bx-img { height: 220px; display: flex; align-items: flex-end; justify-content: center; gap: 4px; padding: 18px 12px 0; }
   .bx-prize .bx-img img { max-height: 100%; width: auto; max-width: 62%; object-fit: contain; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
   .bx-prize .bx-img img.small { max-height: 74%; max-width: 30%; }
+  .bx-prize .bx-img .bx-speaker { height: 92%; width: auto; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
+  .bx-prize .bx-img.trio img { max-width: 40%; }
+  .bx-prize .bx-img.trio img.small { max-width: 18%; }
   .bx-prize .bx-cap { padding: 14px 16px 16px; border-top: 1px solid var(--bx-line); background: rgba(10,11,13,.55); }
   .bx-rank { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
     padding: 3px 8px; border-radius: 6px; background: rgba(255,255,255,.08); color: var(--bx-fg); }
@@ -113,7 +116,7 @@
   <header class="bx-hero">
     <img class="bx-logo" alt="BingX" src="img/bingx-logo.png">
     <h1>KOL Exclusive Trading <span>Competition</span></h1>
-    <p class="bx-sub">A 1-week futures trading volume competition for BingX PH KOL partners. Start with a maximum of 200 USDT, hit at least 1M USDT trading volume to qualify, and the top 3 by volume win BingX prizes.</p>
+    <p class="bx-sub">A 2-week futures trading volume competition for BingX PH KOL partners. Start with a maximum of 200 USDT, hit at least 1M USDT trading volume to qualify, and the top 3 by volume win BingX prizes.</p>
     <p class="bx-live"><span class="bx-dot"></span><span id="countdown">&nbsp;</span></p>
   </header>
 
@@ -125,12 +128,22 @@
         <div class="bx-cap"><span class="bx-rank">Top 1</span><h3>Beats headset</h3></div>
       </article>
       <article class="bx-prize">
-        <div class="bx-img"><img alt="BingX backpack" src="img/bag.webp"><img class="small" alt="BingX tumbler" src="img/tumbler.webp"></div>
-        <div class="bx-cap"><span class="bx-rank">Top 2</span><h3>BingX bag + tumbler</h3></div>
+        <div class="bx-img"><svg class="bx-speaker" viewBox="0 0 120 200" role="img" aria-label="Portable speaker">
+          <defs>
+            <linearGradient id="spk-body" x1="0" x2="1"><stop offset="0" stop-color="#16181D"/><stop offset=".45" stop-color="#3A3F48"/><stop offset="1" stop-color="#121418"/></linearGradient>
+            <pattern id="spk-grille" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#0A0B0D" opacity=".7"/></pattern>
+          </defs>
+          <rect x="44" y="4" width="32" height="22" rx="10" fill="none" stroke="#2A2E35" stroke-width="6"/>
+          <rect x="14" y="18" width="92" height="178" rx="40" fill="url(#spk-body)"/>
+          <rect x="14" y="18" width="92" height="178" rx="40" fill="url(#spk-grille)"/>
+          <rect x="22" y="160" width="76" height="26" rx="12" fill="#1C1F25"/>
+          <circle cx="60" cy="173" r="5" fill="#0F5FFE"/>
+        </svg></div>
+        <div class="bx-cap"><span class="bx-rank">Top 2</span><h3>Sony ULT speaker</h3></div>
       </article>
       <article class="bx-prize">
-        <div class="bx-img"><img alt="BingX black shirt" src="img/shirt.webp"><img class="small" alt="BingX tumbler" src="img/tumbler.webp"></div>
-        <div class="bx-cap"><span class="bx-rank">Top 3</span><h3>BingX shirt + tumbler</h3></div>
+        <div class="bx-img trio"><img alt="BingX backpack" src="img/bag.webp"><img alt="BingX black shirt" src="img/shirt.webp"><img class="small" alt="BingX tumbler" src="img/tumbler.webp"></div>
+        <div class="bx-cap"><span class="bx-rank">Top 3</span><h3>BingX bag, tumbler + shirt</h3></div>
       </article>
     </div>
   </section>
@@ -153,10 +166,10 @@
   <section class="bx-section" id="rules">
     <h2>How it works</h2>
     <ul class="bx-list">
-      <li><b>Duration:</b> Oct 30, 12:00 AM to Nov 6, 10:00 PM (PH time). Winners announced Nov 7.</li>
+      <li><b>Duration:</b> Nov 9, 12:00 AM to Nov 22, 10:00 PM (PH time). Winners announced Nov 23.</li>
       <li><b>TV formula:</b> Position size × Leverage × 2 (open + close). Example: 100 USDT at 20x opened and closed = 4,000 TV.</li>
-      <li><b>Starting capital:</b> Max 200 USDT in your futures account at the start. No top-ups or transfers in during the week. You can keep trading with your profits.</li>
-      <li><b>Qualify:</b> Reach at least 1,000,000 USDT TV within the week. Highest TV among qualifiers wins.</li>
+      <li><b>Starting capital:</b> Max 200 USDT in your futures account at the start. No top-ups or transfers in during the competition. You can keep trading with your profits.</li>
+      <li><b>Qualify:</b> Reach at least 1,000,000 USDT TV within the competition period. Highest TV among qualifiers wins.</li>
       <li><b>What counts:</b> Crypto perpetual futures on your own BingX account. Not counted: spot, CFDs (stocks, forex, commodities), bots, and referral or community volume.</li>
       <li><b>Tie-breaker:</b> Higher net realized PnL in the window, then earliest registration.</li>
       <li><b>Fair play:</b> 1 UID per KOL. No sub or alt accounts, no wash trading. BingX PH may disqualify any account, and its decision is final.</li>
@@ -167,8 +180,8 @@
 </div>
 
 <script>
-  const START = new Date('2026-10-30T00:00:00+08:00');
-  const END = new Date('2026-11-06T22:00:00+08:00');
+  const START = new Date('2026-11-09T00:00:00+08:00');
+  const END = new Date('2026-11-22T22:00:00+08:00');
   const fmt = new Intl.NumberFormat('en-US', {maximumFractionDigits: 0});
 
   function tick() {
