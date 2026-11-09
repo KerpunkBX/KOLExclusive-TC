@@ -53,7 +53,7 @@
   .bx-prize .bx-img { height: 220px; display: flex; align-items: flex-end; justify-content: center; gap: 4px; padding: 18px 12px 0; }
   .bx-prize .bx-img img { max-height: 100%; width: auto; max-width: 62%; object-fit: contain; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
   .bx-prize .bx-img img.small { max-height: 74%; max-width: 30%; }
-  .bx-prize .bx-img .bx-speaker { height: 92%; width: auto; filter: drop-shadow(0 10px 18px rgba(0,0,0,.55)); }
+  .bx-prize .bx-img img.wide { max-width: 92%; max-height: 88%; align-self: center; }
   .bx-prize .bx-img.trio img { max-width: 40%; }
   .bx-prize .bx-img.trio img.small { max-width: 18%; }
   .bx-prize .bx-cap { padding: 14px 16px 16px; border-top: 1px solid var(--bx-line); background: rgba(10,11,13,.55); }
@@ -128,17 +128,7 @@
         <div class="bx-cap"><span class="bx-rank">Top 1</span><h3>Beats headset</h3></div>
       </article>
       <article class="bx-prize">
-        <div class="bx-img"><svg class="bx-speaker" viewBox="0 0 120 200" role="img" aria-label="Portable speaker">
-          <defs>
-            <linearGradient id="spk-body" x1="0" x2="1"><stop offset="0" stop-color="#16181D"/><stop offset=".45" stop-color="#3A3F48"/><stop offset="1" stop-color="#121418"/></linearGradient>
-            <pattern id="spk-grille" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#0A0B0D" opacity=".7"/></pattern>
-          </defs>
-          <rect x="44" y="4" width="32" height="22" rx="10" fill="none" stroke="#2A2E35" stroke-width="6"/>
-          <rect x="14" y="18" width="92" height="178" rx="40" fill="url(#spk-body)"/>
-          <rect x="14" y="18" width="92" height="178" rx="40" fill="url(#spk-grille)"/>
-          <rect x="22" y="160" width="76" height="26" rx="12" fill="#1C1F25"/>
-          <circle cx="60" cy="173" r="5" fill="#0F5FFE"/>
-        </svg></div>
+        <div class="bx-img"><img class="wide" alt="Sony ULT speaker with BingX branding" src="img/speaker.webp"></div>
         <div class="bx-cap"><span class="bx-rank">Top 2</span><h3>Sony ULT speaker</h3></div>
       </article>
       <article class="bx-prize">
